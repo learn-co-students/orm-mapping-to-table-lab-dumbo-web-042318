@@ -59,5 +59,10 @@ describe "Student" do
       expect(student.name).to eq("Josh")
       expect(student.grade).to eq("9th")
     end
+    it 'adds additional database entries' do
+      student_1 = Student.create(name: "Josh", grade: "9th")
+      student_2 = Student.create(name: "Josh", grade: "9th")
+      expect(student_2.id).to eq(2)
+    end
   end
 end
